@@ -131,7 +131,7 @@ if(response != null && Response.OK == response.resultCode) {
 }
 ```
 
-##混淆编译时注意
+## 混淆编译时注意
 有可能在混淆编译时，无法正常使用，请将下面规则拷贝过去<br/>
 
 ```java
@@ -153,3 +153,11 @@ if(response != null && Response.OK == response.resultCode) {
 -keepclassmembers class ** {
     @com.appleye.eventbus.Hook <fields>;
 }
+```
+
+## 其他
+### 如果想自己来管理LightEventBus
+```java
+//每次创建一个新的实例
+EventBusFac.newInstance();
+```
