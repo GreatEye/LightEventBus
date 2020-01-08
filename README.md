@@ -9,8 +9,8 @@
 3. EventBus只支持发布-订阅模式，而且一个方法对应一个消息，但是LightEventBus则从另外一种角度来诠释，可以解决方法数限制的问题(方法个数不能超过65535)，且方法调用效率更高(把消息作为Key值，而不是遍历所有方法)，EventBus采用的是遍历方式查找方法，此外LightEventBus还支持请求-响应模式。<br>
 
 ## LightEventBus架构简单示意图
-<img src="publisher-subscriber.png" width="500" height="200"/><br/>
-<img src="request-response.png" width="500" height="200"/>
+<img src="publisher-subscriber.png" width="600" height="300"/><br/>
+<img src="request-response.png" width="600" height="200"/>
 ## LightEventBus使用范例
 ### 发布-订阅模式
 #### 1. 定义分组名称
