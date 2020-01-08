@@ -8,10 +8,10 @@
 2. EventBus的注册和注销是配套使用的，并且在注册时，就会遍历对象的所有方法，如果一启动就有非常多的对象需要监听，会严重影响性能，此外不注销会导致内存泄露，但有时注销不是那么方便的。LightEventBus虽然也需要调用注册接口，但真正的方法查找，只有等真正发送消息时才会去遍历，采用的是懒汉方式。另外可以不用调用注销方法，因为本身是和组件同生命周期的
 3. EventBus只支持发布-订阅模式，而且一个方法对应一个消息，但是LightEventBus则从另外一种角度来诠释，可以解决方法数限制的问题(方法个数不能超过65535)，且方法调用效率更高(把消息作为Key值，而不是遍历所有方法)，EventBus采用的是遍历方式查找方法，此外LightEventBus还支持请求-响应模式。<br>
 
-##LightEventBus简单示意图
-![avatar](./publisher-subscriber.png)
-![avatar](./request-response.png)
-##LightEventBus使用范例
+## LightEventBus架构简单示意图
+<img src="publisher-subscriber.png" width="500" height="200"/><br/>
+<img src="request-response.png" width="500" height="200"/>
+## LightEventBus使用范例
 ### 发布-订阅模式
 #### 1. 定义分组名称
 ```java
