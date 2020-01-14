@@ -13,6 +13,10 @@ gradle依赖
 ```gradle
 compile 'com.appleye.eventbus:LightEventBus:1.0.0'
 ```
+或者
+```gradle
+implementation 'com.appleye.eventbus:LightEventBus:1.0.0'
+```
 
 maven依赖
 ```xml
