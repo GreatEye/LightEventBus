@@ -13,31 +13,38 @@ package com.appleye.eventbus;
  * @author Liaopu
  * date 2019-12-07
  * 定义轻量级EventBus接口
- * <p>1. 支持 订阅-分发 模型</>
- * <p>2. 支持 请求-响应 模型<p/>
- * <p>3. 只支持同步操作，不支持异步<p/>
- * <p>4. 支持分组模式，也就是一个业务单元一个轻量级EventBus，这也就是轻量级的含义<p/>
+ * <p>1. 支持 订阅-分发 模型</p>
+ * <p>2. 支持 请求-响应 模型</p>
+ * <p>3. 只支持同步操作，不支持异步<pp>
+ * <p>4. 支持分组模式，也就是一个业务单元一个轻量级EventBus，这也就是轻量级的含义</p>
  */
 @NoProguard
 public interface ILightEventBus {
     /**
      * 获取分组名
+     * @return group名称
      * */
     String getGroupName();
     /**
      * 注册订阅者
+     * @param subscriber 订阅者
+     * @return 引用
      * */
     ILightEventBus register(Object subscriber);
     /**
      * 注销订阅者
+     * @param subscriber 订阅者
      * */
     void unRegister(Object subscriber);
     /**
      * 增加钩子，避免被gc，用一个观察者来勾住，生命周期等同观察者
+     * @param subscriber 要勾住的对象
+     * @return 引用
      * */
     ILightEventBus hook(Object subscriber);
     /**
      * 发送消息
+     * @param event 事件
      * */
     void postEvent(Event event);
 
